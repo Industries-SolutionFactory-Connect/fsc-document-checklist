@@ -280,12 +280,6 @@ extract:
     fields:
     - Name
     - TimeZone
-  RecordType:
-    fields:
-    - Description
-    - DeveloperName
-    - Name
-    - SobjectType
   DocumentChecklistItem:
     fields:
     - IsAccepted
@@ -309,3 +303,8 @@ extract:
     fields:
     - Name
     - Status
+  BusinessProcess:
+    fields:
+    - Description
+    - Name
+    - TableEnumOrId

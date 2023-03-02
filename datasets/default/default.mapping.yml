@@ -96,14 +96,6 @@ Insert OperatingHours:
   fields:
   - Name
   - TimeZone
-Insert RecordType:
-  sf_object: RecordType
-  table: RecordType
-  fields:
-  - Description
-  - DeveloperName
-  - Name
-  - SobjectType
 Insert DocumentType:
   sf_object: DocumentType
   table: DocumentType
@@ -119,6 +111,20 @@ Insert ReceivedDocument:
   fields:
   - Name
   - Status
+Insert BusinessProcess:
+  sf_object: BusinessProcess
+  table: BusinessProcess
+  fields:
+  - Description
+  - Name
+  - TableEnumOrId
+Insert RecordType:
+  sf_object: RecordType
+  table: RecordType
+  fields:
+  - DeveloperName
+  - Name
+  - SobjectType
 Insert Account:
   sf_object: Account
   table: Account

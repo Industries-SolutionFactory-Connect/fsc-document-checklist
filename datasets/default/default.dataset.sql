@@ -190,6 +190,16 @@ CREATE TABLE "Account" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "Account" VALUES(1,'','','Rachael Adams Account','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','','','','','','','','','','False','','','','False','False','','','','False','False','','','','','','False','','','0012019867434338071677697112391','Individual','','','','','','','','','','','','','','','','','','','','','','','','','','','False','','','False','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','','','','','','','','','','','','','','','','','','','','','','','','Active','','','','','','0.0','0.0','0.0','0.0','','','','','','','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','','','','','','','','False','','','','','','','2');
+CREATE TABLE "BusinessProcess" (
+	id INTEGER NOT NULL, 
+	"Description" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"TableEnumOrId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "BusinessProcess" VALUES(1,'Consumer lead','Lead Process','Lead');
+INSERT INTO "BusinessProcess" VALUES(2,'','Opportunity Process','Opportunity');
+INSERT INTO "BusinessProcess" VALUES(3,'','Wallet Share','Opportunity');
 CREATE TABLE "Contact" (
 	id INTEGER NOT NULL, 
 	"AssistantName" VARCHAR(255), 
@@ -322,51 +332,50 @@ CREATE TABLE "ReceivedDocument" (
 );
 CREATE TABLE "RecordType" (
 	id INTEGER NOT NULL, 
-	"Description" VARCHAR(255), 
 	"DeveloperName" VARCHAR(255), 
 	"Name" VARCHAR(255), 
 	"SobjectType" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "RecordType" VALUES(1,'A grouping of related people and institutions','IndustriesHousehold','Household','Account');
-INSERT INTO "RecordType" VALUES(2,'A person who is a prospect or a client','IndustriesIndividual','Individual','Account');
-INSERT INTO "RecordType" VALUES(3,'A business or an organization','IndustriesBusiness','Business','Account');
-INSERT INTO "RecordType" VALUES(4,'Contact data for an institution or a business account','IndustriesBusiness','Business','Contact');
-INSERT INTO "RecordType" VALUES(5,'Credit Billing Statement','Credit','Credit','FinServ__BillingStatement__c');
-INSERT INTO "RecordType" VALUES(6,'Debit Billing Statement','Debit','Debit','FinServ__BillingStatement__c');
-INSERT INTO "RecordType" VALUES(7,'Fees and rates for a line of credit','Credit','Credit','FinServ__ChargesAndFees__c');
-INSERT INTO "RecordType" VALUES(8,'Fees and rates for a deposit account','Debit','Debit','FinServ__ChargesAndFees__c');
-INSERT INTO "RecordType" VALUES(9,'Accounts that provide transaction or investment services for chief financial officers or treasurers.','TreasuryService','Treasury Service','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(10,'A business or organization that is a commercial banking business referral​','BusinessReferral','Business Referral','Lead');
-INSERT INTO "RecordType" VALUES(11,'Represents a type of loan for financing a purchase of real property.','Mortgage','Mortgage','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(12,'Represents an interest-bearing deposit account','SavingsAccount','Savings Account','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(13,'','RetirementPlanning','Retirement Planning','Opportunity');
-INSERT INTO "RecordType" VALUES(14,'','WalletShareOpportunity','Opportunity (Wallet Share)','Opportunity');
-INSERT INTO "RecordType" VALUES(15,'','RetirementPlanning','Retirement Planning','Lead');
-INSERT INTO "RecordType" VALUES(16,'','General','General','Opportunity');
-INSERT INTO "RecordType" VALUES(17,'','General','General','Lead');
-INSERT INTO "RecordType" VALUES(18,'A person, business, or organization that is a referral','Referral','Person Referral','Lead');
-INSERT INTO "RecordType" VALUES(19,'Role occupied by a person','ContactRole','Contact Role','FinServ__FinancialAccountRole__c');
-INSERT INTO "RecordType" VALUES(20,'Represents a type of loan for financing a purchase of a motor vehicle.','AutoLoan','Auto Loan','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(21,'Default event record type for Client Associate profile','ClientAssociateEvent','Client Associate Event','Event');
-INSERT INTO "RecordType" VALUES(22,'Role occupied by an organizational entity, such as a corporation or LLC','AccountRole','Account Role','FinServ__FinancialAccountRole__c');
-INSERT INTO "RecordType" VALUES(23,'Contact data for a retail client','IndustriesIndividual','Individual','Contact');
-INSERT INTO "RecordType" VALUES(24,'Default event record type for Advisor profile','AdvisorEvent','Advisor Event','Event');
-INSERT INTO "RecordType" VALUES(25,'Investment accounts such as brokerage accounts','InvestmentAccount','Investment Account','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(26,'Represents a type of account for financing a purchase.','LoanAccount','Loan Account','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(27,'Represents a line of credit secured by equity in real property.','HELOC','HELOC','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(28,'Insurance policies','InsurancePolicy','Insurance Policy','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(29,'Represents a type of payment card issued with a line of credit','CreditCard','Credit Card','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(30,'General financial accounts','General','General Account','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(31,'Bank accounts such as savings, checking, and credit','BankingAccount','Bank Account','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(32,'Represents a deposit account for withdrawals and deposits','CheckingAccount','Checking Account','FinServ__FinancialAccount__c');
-INSERT INTO "RecordType" VALUES(33,'Default task record type for Advisor profile','AdvisorTask','Advisor Task','Task');
-INSERT INTO "RecordType" VALUES(34,'Default task record type for Client Associate profile','ClientAssociateTask','Client Associate Task','Task');
-INSERT INTO "RecordType" VALUES(35,'Roles associated with Account-Account Relationships','AccountRole','Account Role','FinServ__ReciprocalRole__c');
-INSERT INTO "RecordType" VALUES(36,'Roles associated with Contact-Contact Relationships','ContactRole','Contact Role','FinServ__ReciprocalRole__c');
-INSERT INTO "RecordType" VALUES(37,'An institution that is a prospect or a client','IndustriesInstitution','Institution','Account');
-INSERT INTO "RecordType" VALUES(38,'Asset not represented in financial accounts, such as real estate or collectibles','NonfinancialAsset','Asset','FinServ__AssetsAndLiabilities__c');
-INSERT INTO "RecordType" VALUES(39,'Debt owed, such as a mortgage','Liability','Liability','FinServ__AssetsAndLiabilities__c');
-INSERT INTO "RecordType" VALUES(40,'FSC Account Record Type','FSC_Account','FSC Account','Account');
-INSERT INTO "RecordType" VALUES(41,'','PersonAccount','Person Account','Account');
+INSERT INTO "RecordType" VALUES(1,'IndustriesHousehold','Household','Account');
+INSERT INTO "RecordType" VALUES(2,'IndustriesIndividual','Individual','Account');
+INSERT INTO "RecordType" VALUES(3,'IndustriesBusiness','Business','Account');
+INSERT INTO "RecordType" VALUES(4,'IndustriesBusiness','Business','Contact');
+INSERT INTO "RecordType" VALUES(5,'Credit','Credit','FinServ__BillingStatement__c');
+INSERT INTO "RecordType" VALUES(6,'Debit','Debit','FinServ__BillingStatement__c');
+INSERT INTO "RecordType" VALUES(7,'Credit','Credit','FinServ__ChargesAndFees__c');
+INSERT INTO "RecordType" VALUES(8,'Debit','Debit','FinServ__ChargesAndFees__c');
+INSERT INTO "RecordType" VALUES(9,'TreasuryService','Treasury Service','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(10,'BusinessReferral','Business Referral','Lead');
+INSERT INTO "RecordType" VALUES(11,'Mortgage','Mortgage','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(12,'SavingsAccount','Savings Account','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(13,'RetirementPlanning','Retirement Planning','Opportunity');
+INSERT INTO "RecordType" VALUES(14,'WalletShareOpportunity','Opportunity (Wallet Share)','Opportunity');
+INSERT INTO "RecordType" VALUES(15,'RetirementPlanning','Retirement Planning','Lead');
+INSERT INTO "RecordType" VALUES(16,'General','General','Opportunity');
+INSERT INTO "RecordType" VALUES(17,'General','General','Lead');
+INSERT INTO "RecordType" VALUES(18,'Referral','Person Referral','Lead');
+INSERT INTO "RecordType" VALUES(19,'ContactRole','Contact Role','FinServ__FinancialAccountRole__c');
+INSERT INTO "RecordType" VALUES(20,'AutoLoan','Auto Loan','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(21,'ClientAssociateEvent','Client Associate Event','Event');
+INSERT INTO "RecordType" VALUES(22,'AccountRole','Account Role','FinServ__FinancialAccountRole__c');
+INSERT INTO "RecordType" VALUES(23,'IndustriesIndividual','Individual','Contact');
+INSERT INTO "RecordType" VALUES(24,'AdvisorEvent','Advisor Event','Event');
+INSERT INTO "RecordType" VALUES(25,'InvestmentAccount','Investment Account','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(26,'LoanAccount','Loan Account','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(27,'HELOC','HELOC','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(28,'InsurancePolicy','Insurance Policy','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(29,'CreditCard','Credit Card','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(30,'General','General Account','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(31,'BankingAccount','Bank Account','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(32,'CheckingAccount','Checking Account','FinServ__FinancialAccount__c');
+INSERT INTO "RecordType" VALUES(33,'AdvisorTask','Advisor Task','Task');
+INSERT INTO "RecordType" VALUES(34,'ClientAssociateTask','Client Associate Task','Task');
+INSERT INTO "RecordType" VALUES(35,'AccountRole','Account Role','FinServ__ReciprocalRole__c');
+INSERT INTO "RecordType" VALUES(36,'ContactRole','Contact Role','FinServ__ReciprocalRole__c');
+INSERT INTO "RecordType" VALUES(37,'IndustriesInstitution','Institution','Account');
+INSERT INTO "RecordType" VALUES(38,'NonfinancialAsset','Asset','FinServ__AssetsAndLiabilities__c');
+INSERT INTO "RecordType" VALUES(39,'Liability','Liability','FinServ__AssetsAndLiabilities__c');
+INSERT INTO "RecordType" VALUES(40,'FSC_Account','FSC Account','Account');
+INSERT INTO "RecordType" VALUES(41,'PersonAccount','Person Account','Account');
 COMMIT;
